@@ -1,0 +1,30 @@
+:root {
+    /* Colors */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1a1a1a;
+
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-muted: #555555;
+
+    --accent-color: #e63946;
+    /* Bold Red/Orange */
+    --accent-hover: #ff4d5a;
+
+    /* Typography */
+    --font-family-body: 'Outfit', sans-serif;
+    --font-family-heading: 'Oswald', sans-serif;
+    /* Heavy feel */
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --spacing-hero: 8rem;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
