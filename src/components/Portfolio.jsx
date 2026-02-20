@@ -32,74 +32,67 @@ const Portfolio = () => {
     const categories = ['All', ...new Set(portfolioItems.map(item => item.category))];
 
     return (
-        <section id="portfolio" style={{ padding: '8rem 2rem', background: 'var(--bg-secondary)' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <section id="portfolio" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
+            <div className="container">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '2rem' }}
+                    style={{ textAlign: 'center', fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '4rem' }}
                 >
-                    PORTFOLIO
+                    OUR <span style={{ color: 'var(--accent-color)' }}>GALLERY</span>
                 </motion.h2>
 
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                    {categories.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => setFilter(cat)}
+                <div className="responsive-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
+                    {portfolioItems.map((item, index) => (
+                        <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            whileHover={{ y: -10 }}
                             style={{
-                                background: filter === cat ? 'var(--accent-color)' : 'transparent',
-                                color: filter === cat ? '#fff' : 'var(--text-secondary)',
-                                border: '1px solid var(--accent-color)',
-                                padding: '0.5rem 1.5rem',
-                                cursor: 'pointer',
-                                textTransform: 'uppercase',
-                                borderRadius: '20px',
-                                transition: 'all 0.3s ease',
+                                position: 'relative',
+                                height: '350px',
+                                borderRadius: '8px',
+                                overflow: 'hidden',
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                                border: '1px solid rgba(255,255,255,0.05)'
                             }}
                         >
-                            {cat}
-                        </button>
+                            <img
+                                src={item.src}
+                                alt={item.category}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    transition: 'transform 0.5s ease'
+                                }}
+                            />
+                            <div style={{
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                width: '100%',
+                                padding: '2rem',
+                                background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
+                                color: '#fff'
+                            }}>
+                                <span style={{
+                                    fontSize: '0.8rem',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '2px',
+                                    color: 'var(--accent-color)',
+                                    fontWeight: 'bold'
+                                }}>
+                                    {item.category}
+                                </span>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
-
-                <motion.div
-                    layout
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                        gap: '1.5rem'
-                    }}
-                >
-                    <AnimatePresence>
-                        {filteredItems.map((item) => (
-                            <motion.div
-                                layout
-                                key={item.id}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
-                                transition={{ duration: 0.3 }}
-                                style={{ overflow: 'hidden', borderRadius: '8px', cursor: 'pointer' }}
-                                whileHover={{ scale: 1.02 }}
-                            >
-                                <img
-                                    src={item.src}
-                                    alt={item.category}
-                                    style={{
-                                        width: '100%',
-                                        height: '300px',
-                                        objectFit: 'cover',
-                                        transition: 'transform 0.5s ease'
-                                    }}
-                                    onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-                                    onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                                />
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
             </div>
         </section>
     );

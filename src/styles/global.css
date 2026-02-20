@@ -64,3 +64,55 @@ img {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
 }
+
+/* Responsive Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.responsive-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.section-padding {
+    padding: 8rem 1.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 6rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .section-padding {
+        padding: 4rem 1rem;
+    }
+
+    .responsive-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    h1 {
+        font-size: 3rem !important;
+    }
+
+    h2 {
+        font-size: 2.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 3rem 1rem;
+    }
+}

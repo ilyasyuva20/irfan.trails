@@ -5,27 +5,19 @@ import logo from '../assets/logo.jpeg';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-
     return (
-        <footer style={{
-            background: 'var(--bg-primary)',
-            padding: '4rem 2rem 2rem',
-            borderTop: '1px solid rgba(255,180,0,0.1)',
-            color: 'var(--text-secondary)'
-        }}>
-            <div style={{
-                maxWidth: '1200px',
-                margin: '0 auto',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                gap: '3rem',
-                marginBottom: '4rem'
-            }}>
+        <footer style={{ background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '5rem 0 2rem' }}>
+            <div className="container responsive-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
+
                 {/* Brand Section */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <img src={logo} alt="Irfan Trails" style={{ height: '80px', width: 'auto', alignSelf: 'flex-start' }} />
-                    <p style={{ lineHeight: '1.8', fontSize: '0.95rem' }}>
-                        Empowering motorcyclists through professional training and unforgettable adventure tours. Join the trails today.
+                <div>
+                    <img
+                        src={logo}
+                        alt="Irfan Trails"
+                        style={{ height: '80px', width: 'auto', marginBottom: '1.5rem', filter: 'drop-shadow(0 0 10px rgba(255,180,0,0.2))' }}
+                    />
+                    <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '2rem', fontSize: '0.95rem' }}>
+                        Curating the finest off-road and adventure motorcycling experiences. Master the terrain with us.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         <SocialIcon icon={<FaInstagram />} href="https://instagram.com/irfan.trails" />
@@ -36,7 +28,7 @@ const Footer = () => {
 
                 {/* Quick Links */}
                 <div>
-                    <h4 style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>Quick Links</h4>
+                    <h4 style={{ color: 'var(--text-primary)', marginBottom: '2rem', fontSize: '1.2rem' }}>Quick Links</h4>
                     <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         <FooterLink href="#about">About Us</FooterLink>
                         <FooterLink href="#services">Services</FooterLink>
@@ -48,39 +40,25 @@ const Footer = () => {
 
                 {/* Contact Info */}
                 <div>
-                    <h4 style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>Contact Us</h4>
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                        <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaMapMarkerAlt style={{ color: 'var(--accent-color)' }} />
-                            <span>Wayanad, Kerala, India</span>
+                    <h4 style={{ color: 'var(--text-primary)', marginBottom: '2rem', fontSize: '1.2rem' }}>Reach Us</h4>
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        <li style={{ display: 'flex', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                            <FaMapMarkerAlt style={{ color: 'var(--accent-color)', flexShrink: 0, marginTop: '5px' }} />
+                            <span>Wayanad / Coorg / Bangalore India</span>
                         </li>
-                        <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaEnvelope style={{ color: 'var(--accent-color)' }} />
-                            <span>info@irfantrails.com</span>
-                        </li>
-                        <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaWhatsapp style={{ color: 'var(--accent-color)' }} />
-                            <span>+91 1234567890</span>
+                        <li style={{ display: 'flex', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                            <FaEnvelope style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
+                            <span>irfantrails@gmail.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            {/* Bottom Bar */}
-            <div style={{
-                maxWidth: '1200px',
-                margin: '0 auto',
-                paddingTop: '2rem',
-                borderTop: '1px solid rgba(255,255,255,0.05)',
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                gap: '1rem',
-                fontSize: '0.85rem'
-            }}>
-                <p>&copy; {currentYear} Irfan Trails. All rights reserved.</p>
-                <p>
+            <div className="container" style={{ marginTop: '5rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '1px' }}>
+                    &copy; {currentYear} IRFAN TRAILS. ALL RIGHTS RESERVED.
+                </p>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', marginTop: '1rem' }}>
                     Made with <span style={{ color: 'var(--accent-color)' }}>&hearts;</span> for the Riding Community
                 </p>
             </div>
@@ -95,7 +73,9 @@ const FooterLink = ({ href, children }) => (
             whileHover={{ x: 5, color: 'var(--accent-color)' }}
             style={{
                 transition: 'color 0.3s ease',
-                display: 'inline-block'
+                display: 'inline-block',
+                color: 'var(--text-secondary)',
+                textDecoration: 'none'
             }}
         >
             {children}
@@ -119,7 +99,8 @@ const SocialIcon = ({ icon, href }) => (
             justifyContent: 'center',
             fontSize: '1.2rem',
             color: 'var(--text-primary)',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            textDecoration: 'none'
         }}
     >
         {icon}

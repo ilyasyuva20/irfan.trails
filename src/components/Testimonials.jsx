@@ -41,9 +41,9 @@ const Testimonials = () => {
     };
 
     return (
-        <section id="testimonials" style={{ padding: '8rem 2rem', background: 'var(--bg-primary)' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                <h2 style={{ fontSize: '3rem', marginBottom: '4rem' }}>TESTIMONIALS</h2>
+        <section id="testimonials" className="section-padding" style={{ background: 'var(--bg-primary)' }}>
+            <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '4rem' }}>TESTIMONIALS</h2>
 
                 <div style={{ position: 'relative', minHeight: '350px' }}>
                     <AnimatePresence mode='wait'>
@@ -55,7 +55,7 @@ const Testimonials = () => {
                             transition={{ duration: 0.5 }}
                             style={{
                                 background: 'var(--bg-secondary)',
-                                padding: '4rem 3rem 3rem',
+                                padding: 'clamp(3rem, 10vw, 4rem) clamp(1.5rem, 5vw, 3rem) 3rem',
                                 borderRadius: '12px',
                                 border: '1px solid rgba(255,255,255,0.05)',
                                 position: 'relative',
@@ -72,8 +72,8 @@ const Testimonials = () => {
                                 alignItems: 'center'
                             }}>
                                 <div style={{
-                                    width: '100px',
-                                    height: '100px',
+                                    width: 'clamp(80px, 15vw, 100px)',
+                                    height: 'clamp(80px, 15vw, 100px)',
                                     borderRadius: '50%',
                                     border: '4px solid var(--accent-color)',
                                     overflow: 'hidden',
@@ -88,17 +88,17 @@ const Testimonials = () => {
                                 </div>
                                 <div style={{
                                     background: 'var(--accent-color)',
-                                    padding: '0.8rem',
+                                    padding: '0.6rem',
                                     borderRadius: '50%',
-                                    marginTop: '-2.5rem',
-                                    marginLeft: '5rem',
-                                    border: '4px solid var(--bg-secondary)'
+                                    marginTop: '-2.2rem',
+                                    marginLeft: '4rem',
+                                    border: '3px solid var(--bg-secondary)'
                                 }}>
-                                    <FaQuoteLeft size={12} color="#000" />
+                                    <FaQuoteLeft size={10} color="#000" />
                                 </div>
                             </div>
 
-                            <p style={{ fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '2rem', lineHeight: '1.8', marginTop: '2rem' }}>
+                            <p style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', fontStyle: 'italic', marginBottom: '2rem', lineHeight: '1.8', marginTop: '1.5rem' }}>
                                 "{testimonials[currentIndex].text}"
                             </p>
 
@@ -108,8 +108,8 @@ const Testimonials = () => {
                                 ))}
                             </div>
 
-                            <h4 style={{ fontSize: '1.5rem', marginBottom: '0.2rem', color: 'var(--text-primary)' }}>{testimonials[currentIndex].name}</h4>
-                            <p style={{ color: 'var(--accent-color)', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>{testimonials[currentIndex].role}</p>
+                            <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)', marginBottom: '0.2rem', color: 'var(--text-primary)' }}>{testimonials[currentIndex].name}</h4>
+                            <p style={{ color: 'var(--accent-color)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>{testimonials[currentIndex].role}</p>
                         </motion.div>
                     </AnimatePresence>
 
@@ -120,14 +120,17 @@ const Testimonials = () => {
                                 background: 'transparent',
                                 border: '1px solid var(--text-secondary)',
                                 color: 'var(--text-primary)',
-                                width: '40px',
-                                height: '40px',
+                                width: '45px',
+                                height: '45px',
                                 borderRadius: '50%',
                                 cursor: 'pointer',
-                                transition: 'all 0.3s ease'
+                                transition: 'all 0.3s ease',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
                             }}
-                            onMouseEnter={(e) => { e.target.style.background = 'var(--accent-color)'; e.target.style.border = '1px solid var(--accent-color)'; }}
-                            onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.border = '1px solid var(--text-secondary)'; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent-color)'; e.currentTarget.style.border = '1px solid var(--accent-color)'; e.currentTarget.style.color = '#000'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.border = '1px solid var(--text-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
                         >
                             &lt;
                         </button>
@@ -137,14 +140,17 @@ const Testimonials = () => {
                                 background: 'transparent',
                                 border: '1px solid var(--text-secondary)',
                                 color: 'var(--text-primary)',
-                                width: '40px',
-                                height: '40px',
+                                width: '45px',
+                                height: '45px',
                                 borderRadius: '50%',
                                 cursor: 'pointer',
-                                transition: 'all 0.3s ease'
+                                transition: 'all 0.3s ease',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
                             }}
-                            onMouseEnter={(e) => { e.target.style.background = 'var(--accent-color)'; e.target.style.border = '1px solid var(--accent-color)'; }}
-                            onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.border = '1px solid var(--text-secondary)'; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent-color)'; e.currentTarget.style.border = '1px solid var(--accent-color)'; e.currentTarget.style.color = '#000'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.border = '1px solid var(--text-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
                         >
                             &gt;
                         </button>

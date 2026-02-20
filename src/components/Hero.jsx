@@ -40,17 +40,18 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
+                className="container"
                 style={{
-                    maxWidth: '80%',
                     zIndex: 1,
                     padding: '2rem',
+                    marginTop: '2rem'
                 }}
             >
                 <motion.h1
                     style={{
-                        fontSize: 'clamp(3rem, 8vw, 6rem)',
-                        marginBottom: '1rem',
-                        lineHeight: 1,
+                        fontSize: 'clamp(2.5rem, 10vw, 6rem)',
+                        marginBottom: '1.5rem',
+                        lineHeight: 1.1,
                         textShadow: '0 0 20px rgba(0,0,0,0.5)'
                     }}
                 >
@@ -63,14 +64,15 @@ const Hero = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
                     style={{
-                        fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                        fontSize: 'clamp(0.9rem, 2.5vw, 1.2rem)',
                         maxWidth: '600px',
                         margin: '0 auto',
                         color: 'var(--text-secondary)',
-                        letterSpacing: '1px'
+                        letterSpacing: '1px',
+                        lineHeight: '1.6'
                     }}
                 >
-                    MOTORSPORTS ACADEMY FOR ADVENTURE & OFF-ROAD RIDING <br /> FROM GRASS ROOTS LEVEL
+                    MOTORSPORTS ACADEMY FOR ADVENTURE & OFF-ROAD RIDING <br className="desktop-only" /> FROM GRASS ROOTS LEVEL
                 </motion.p>
 
                 <motion.div
@@ -85,16 +87,17 @@ const Hero = () => {
                         color: 'var(--text-primary)',
                         textTransform: 'uppercase',
                         letterSpacing: '2px',
-                        background: 'rgba(230, 57, 70, 0.1)',
+                        background: 'rgba(255, 180, 0, 0.1)',
                         backdropFilter: 'blur(5px)',
                         transition: 'all 0.3s ease',
+                        display: 'inline-block'
                     }}
                         onMouseEnter={(e) => {
                             e.target.style.background = 'var(--accent-color)';
-                            e.target.style.color = '#fff';
+                            e.target.style.color = '#000';
                         }}
                         onMouseLeave={(e) => {
-                            e.target.style.background = 'rgba(230, 57, 70, 0.1)';
+                            e.target.style.background = 'rgba(255, 180, 0, 0.1)';
                             e.target.style.color = 'var(--text-primary)';
                         }}
                     >
@@ -102,6 +105,12 @@ const Hero = () => {
                     </a>
                 </motion.div>
             </motion.div>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    .desktop-only { display: none; }
+                }
+            `}</style>
         </section>
     );
 };
