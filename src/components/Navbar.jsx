@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import logo from '../assets/logo.jpeg';
 import '../styles/global.css';
 
 const Navbar = () => {
@@ -17,6 +18,7 @@ const Navbar = () => {
     const navLinks = [
         { name: 'About', href: '#about' },
         { name: 'Services', href: '#services' },
+        { name: 'Events', href: '#events' },
         { name: 'Portfolio', href: '#portfolio' },
         { name: 'Contact', href: '#contact' },
     ];
@@ -42,13 +44,17 @@ const Navbar = () => {
                 borderBottom: isScrolled ? '1px solid rgba(255,255,255,0.1)' : 'none',
             }}
         >
-            <div className="logo" style={{
-                fontFamily: 'var(--font-family-heading)',
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
-                letterSpacing: '2px'
-            }}>
-                IRFAN<span style={{ color: 'var(--accent-color)' }}>.TRAILS</span>
+            <div className="logo">
+                <img
+                    src={logo}
+                    alt="Irfan Trails"
+                    style={{
+                        height: isScrolled ? '70px' : '90px',
+                        width: 'auto',
+                        transition: 'all 0.3s ease',
+                        filter: 'drop-shadow(0 0 15px rgba(255,180,0,0.3))' // Theme-colored glow
+                    }}
+                />
             </div>
 
             <ul style={{ display: 'flex', gap: '2rem' }}>

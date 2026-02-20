@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import bgImage from '../assets/portfolio/irfantrails4.jpeg';
 
 const Hero = () => {
     const { scrollY } = useScroll();
@@ -27,7 +28,7 @@ const Hero = () => {
                     left: 0,
                     width: '100%',
                     height: '120%', // Taller for parallax
-                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1558981806-ec527fa84f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80")', // High-end motorcycle image
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(${bgImage})`, // High-end local motorcycle image
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     y: y1,

@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Placeholder images for portfolio - using Unsplash source for motorcycle/adventure
+import img1 from '../assets/portfolio/irfantrails1.jpeg';
+import img2 from '../assets/portfolio/irfantrails2.jpeg';
+import img3 from '../assets/portfolio/irfantrails3.jpeg';
+import img4 from '../assets/portfolio/irfantrails4.jpeg';
+import img5 from '../assets/portfolio/irfantrails5.jpeg';
+import img6 from '../assets/portfolio/irfantrails6.jpeg';
+import img7 from '../assets/portfolio/irfantrails7.jpeg';
+import img8 from '../assets/portfolio/irfantrails8.jpeg';
+
+// Local images for portfolio
 const portfolioItems = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=600&q=80', category: 'Training' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1625043484550-df60256f6ea5?w=600&q=80', category: 'Events' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1547024858-a0e5b7a5a801?w=600&q=80', category: 'Adventure' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80', category: 'Workshop' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1517502474097-f9b30659dadb?w=600&q=80', category: 'Events' },
-    { id: 6, src: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&q=80', category: 'Training' },
+    { id: 1, src: img1, category: 'Training' },
+    { id: 2, src: img2, category: 'Events' },
+    { id: 3, src: img3, category: 'Adventure' },
+    { id: 4, src: img4, category: 'Workshop' },
+    { id: 5, src: img5, category: 'Events' },
+    { id: 6, src: img6, category: 'Training' },
+    { id: 7, src: img7, category: 'Adventure' },
+    { id: 8, src: img8, category: 'Workshop' },
 ];
 
 const Portfolio = () => {

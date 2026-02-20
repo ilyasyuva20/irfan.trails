@@ -114,37 +114,6 @@ const Contact = () => {
                     </div>
                 </div>
 
-                {/* Footer Bottom */}
-                <div style={{
-                    borderTop: '1px solid rgba(255,255,255,0.1)',
-                    paddingTop: '2rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    textAlign: 'center'
-                }}>
-                    <div className="logo" style={{
-                        fontFamily: 'var(--font-family-heading)',
-                        fontSize: '1.5rem',
-                        fontWeight: 'bold',
-                        letterSpacing: '2px',
-                        marginBottom: '1rem'
-                    }}>
-                        IRFAN<span style={{ color: 'var(--accent-color)' }}>.TRAILS</span>
-                    </div>
-
-                    <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '1rem' }}>
-                        <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}><FaInstagram size={20} /></a>
-                        <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}><FaFacebookF size={20} /></a>
-                        <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}><FaWhatsapp size={20} /></a>
-                    </div>
-
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                        © {new Date().getFullYear()} Irfan Trails. All rights reserved.
-                    </p>
-                </div>
-
             </div>
         </footer>
     );

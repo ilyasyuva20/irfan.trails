@@ -1,21 +1,19 @@
 :root {
     /* Colors */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-tertiary: #1a1a1a;
+    --bg-primary: #0B172A;
+    --bg-secondary: #1D3557;
+    --bg-tertiary: #334155;
 
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --text-muted: #555555;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
 
-    --accent-color: #e63946;
-    /* Bold Red/Orange */
-    --accent-hover: #ff4d5a;
+    --accent-color: #FFB400;
+    --accent-hover: #FFC800;
 
     /* Typography */
-    --font-family-body: 'Outfit', sans-serif;
-    --font-family-heading: 'Oswald', sans-serif;
-    /* Heavy feel */
+    --font-family-body: 'Montserrat', sans-serif;
+    --font-family-heading: 'Chakra Petch', sans-serif;
 
     /* Spacing */
     --spacing-sm: 0.5rem;
