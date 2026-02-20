@@ -53,12 +53,10 @@ const eventsData = [
 ];
 
 const Events = () => {
-    const [filter, setFilter] = useState('All');
+    const [filter, setFilter] = useState('Upcoming');
     const [selectedEvent, setSelectedEvent] = useState(null);
 
-    const filteredEvents = filter === 'All'
-        ? eventsData
-        : eventsData.filter(event => event.type === filter.toLowerCase());
+    const filteredEvents = eventsData.filter(event => event.type === filter.toLowerCase());
 
     return (
         <section id="events" className="section-padding" style={{ background: 'var(--bg-primary)' }}>
@@ -80,7 +78,7 @@ const Events = () => {
                     marginBottom: '3rem',
                     flexWrap: 'wrap'
                 }}>
-                    {['All', 'Upcoming', 'Completed'].map((cat) => (
+                    {['Upcoming', 'Completed'].map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setFilter(cat)}
