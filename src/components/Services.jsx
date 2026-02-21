@@ -11,12 +11,12 @@ const services = [
     {
         icon: <FaRoute size={40} />,
         title: "Motorsports Academy",
-        description: "Comprehensive off-road motorcycle riding training from grass-root levels to advanced techniques."
+        description: "Comprehensive off-road motorcycle riding training from grass-root levels to advanced techniques and Conducting a race event."
     },
     {
         icon: <FaTools size={40} />,
         title: "Trails Moto Workshop",
-        description: "Founder @trails.moto. Specialized workshop for adventure and off-road bikes."
+        description: "We offer comprehensive maintenance, from general commuter bike servicing to expert adventure bike tuning and repairs."
     }
 ];
 

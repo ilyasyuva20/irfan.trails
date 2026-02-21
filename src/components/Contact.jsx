@@ -73,7 +73,7 @@ const Contact = () => {
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                             <ContactItem icon={<FaMapMarkerAlt />} title="Location" content={<a href="https://www.google.com/maps/place/Trails+Moto/@9.8515958,76.3278296,18.4z/data=!4m6!3m5!1s0x3b087100677142c9:0xfbb82cb78c7d25ed!8m2!3d9.8514092!4d76.3278542!16s%2Fg%2F11x6g58kl1?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}>Trails Moto, Kochi, Kerala</a>} />
-                            <ContactItem icon={<FaEnvelope />} title="Email" content="irfancn86.io@gmail.com" />
+                            <ContactItem icon={<FaEnvelope />} title="Email" content="trails.moto@gmail.com" />
                             <ContactItem icon={<FaPhone />} title="Phone" content="+91 95625 84827" />
                         </div>
                     </motion.div>

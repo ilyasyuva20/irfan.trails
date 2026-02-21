@@ -20,7 +20,7 @@ const Footer = () => {
                         Curating the finest off-road and adventure motorcycling experiences. Master the terrain with us.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
-                        <SocialIcon icon={<FaInstagram />} href="https://instagram.com/irfan.trails" />
+                        <SocialIcon icon={<FaInstagram />} href="https://instagram.com/trails.moto" />
                         {/* <SocialIcon icon={<FaFacebookF />} href="https://facebook.com/irfan.trails" /> */}
                         <SocialIcon icon={<FaWhatsapp />} href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" />
                     </div>
@@ -50,7 +50,7 @@ const Footer = () => {
                         </li>
                         <li style={{ display: 'flex', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                             <FaEnvelope style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
-                            <span>irfancn86.io@gmail.com</span>
+                            <span>trails.moto@gmail.com</span>
                         </li>
                     </ul>
                 </div>

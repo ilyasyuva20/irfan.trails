@@ -22,13 +22,16 @@ const About = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>IRFAN TRAILS</span> is a premier business entity specializing in the
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>TRAILS MOTO</span> is a premier business entity specializing in the
                         planning, design, and execution of world-class trail events.
                     </p>
                     <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
                         Born from a passion for the unpaved path, we bridge the gap between motorcycle enthusiasts and the wild.
                         Whether you are a beginner looking to find your footing or a seasoned rider seeking the next challenge,
                         we provide the platform, the training, and the adventure.
+                    </p>
+                    <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+                        Founder: <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>Irfan Trails</span>
                     </p>
                 </motion.div>
             </div>

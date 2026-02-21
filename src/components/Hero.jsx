@@ -55,8 +55,8 @@ const Hero = () => {
                         textShadow: '0 0 20px rgba(0,0,0,0.5)'
                     }}
                 >
-                    ADVENTURE <br />
-                    <span style={{ color: 'transparent', WebkitTextStroke: '2px var(--text-primary)' }}>MOTORCYCLIST</span>
+                    MOTOSPORTS <br />
+                    <span style={{ color: 'transparent', WebkitTextStroke: '2px var(--text-primary)' }}>HOUSE</span>
                 </motion.h1>
 
                 <motion.p
@@ -72,7 +72,7 @@ const Hero = () => {
                         lineHeight: '1.6'
                     }}
                 >
-                    MOTORSPORTS ACADEMY FOR ADVENTURE & OFF-ROAD RIDING <br className="desktop-only" /> FROM GRASS ROOTS LEVEL
+                    MOTOSPORTS ACADEMY FOR ADVENTURE & OFF-ROAD RIDING <br className="desktop-only" /> FROM GRASS ROOTS LEVEL
                 </motion.p>
 
                 <motion.div

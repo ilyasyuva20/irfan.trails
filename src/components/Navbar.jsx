@@ -85,7 +85,7 @@ const Navbar = () => {
                     <a href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" target="_blank" rel="noopener noreferrer">
                         <FaWhatsapp size={20} />
                     </a>
-                    <a href="https://instagram.com/irfan.trails" target="_blank" rel="noopener noreferrer">
+                    <a href="https://instagram.com/trails.moto" target="_blank" rel="noopener noreferrer">
                         <FaInstagram size={20} />
                     </a>
                 </div>
@@ -151,7 +151,7 @@ const Navbar = () => {
                             <a href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" target="_blank" rel="noopener noreferrer">
                                 <FaWhatsapp size={30} />
                             </a>
-                            <a href="https://instagram.com/irfan.trails" target="_blank" rel="noopener noreferrer">
+                            <a href="https://instagram.com/trails.moto" target="_blank" rel="noopener noreferrer">
                                 <FaInstagram size={30} />
                             </a>
                         </div>
