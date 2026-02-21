@@ -42,16 +42,16 @@ const FloatingActions = () => {
                 href="https://instagram.com/irfan.trails"
                 label="Instagram"
             />
-            <SocialButton
+            {/* <SocialButton
                 icon={<FaFacebookF />}
                 color="#1877F2"
                 href="https://facebook.com/irfan.trails"
                 label="Facebook"
-            />
+            /> */}
             <SocialButton
                 icon={<FaWhatsapp />}
                 color="#25D366"
-                href="https://wa.me/yourphonenumber"
+                href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk"
                 label="WhatsApp"
             />
 

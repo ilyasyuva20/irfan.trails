@@ -1,38 +1,23 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTimes, FaPlayCircle, FaTag } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTimes, FaPlayCircle, FaTag, FaTrophy } from 'react-icons/fa';
 
 // Mock data for events
 const eventsData = [
     {
         id: 1,
-        title: "Off-Road Masterclass",
+        title: "Trails Moto SPEED FEST 2026",
         type: "upcoming",
-        date: "March 15, 2026",
+        date: "March 08, 2026",
         time: "09:00 AM - 05:00 PM",
-        venue: "Wayanad Trails Academy",
-        price: "₹1,500",
-        registrationUrl: "https://forms.gle/your-google-form-url-1",
-        poster: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80",
+        venue: "Wolf Trails Off-Road Track, Kochi",
+        registrationUrl: "https://motoXindia.com",
+        poster: "/dist/assets/upcomming1.jpeg",
+        prizeMoney: "1st ₹10000, 2nd ₹5000, 3rd ₹3000",
         description: "Join our expert-led off-road masterclass designed for all skill levels. Master the art of balancing, throttle control, and technical climbs.",
         media: [
-            { type: 'image', url: 'https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=800&q=80' },
-            { type: 'image', url: 'https://images.unsplash.com/photo-1625043484550-df60256f6ea5?w=800&q=80' }
-        ]
-    },
-    {
-        id: 2,
-        title: "Himalayan Expedition 2026",
-        type: "upcoming",
-        date: "May 10 - May 25, 2026",
-        time: "All Day",
-        venue: "Leh-Ladakh Region",
-        price: "₹45,000",
-        registrationUrl: "https://forms.gle/your-google-form-url-2",
-        poster: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
-        description: "A 15-day soul-stirring journey through the highest motorable passes in the world. Experience the raw beauty of the Himalayas.",
-        media: [
-            { type: 'image', url: 'https://images.unsplash.com/photo-1547024858-a0e5b7a5a801?w=800&q=80' }
+            { type: 'image', url: '/dist/assets/upcomming1.jpeg' },
+            { type: 'image', url: '/dist/assets/upcomming2.jpeg' }
         ]
     },
     {
@@ -42,7 +27,6 @@ const eventsData = [
         date: "August 20, 2025",
         time: "10:00 AM",
         venue: "Coorg Estate Trails",
-        price: "₹2,000",
         poster: "https://images.unsplash.com/photo-1609102026400-3c0ca378e470?w=800&q=80",
         description: "Our annual rain-soaked adventure through the coffee plantations of Coorg. A true test of grit and traction.",
         media: [
@@ -152,11 +136,11 @@ const EventCard = ({ event, onClick }) => (
             boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
         }}
     >
-        <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', height: '350px', backgroundColor: 'var(--bg-primary)', overflow: 'hidden' }}>
             <img
                 src={event.poster}
                 alt={event.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '10px' }}
             />
             <div style={{
                 position: 'absolute',
@@ -182,9 +166,16 @@ const EventCard = ({ event, onClick }) => (
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                     <FaMapMarkerAlt color="var(--accent-color)" /> {event.venue}
                 </span>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
-                    <FaTag color="var(--accent-color)" /> {event.price}
-                </span>
+                {event.price && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
+                        <FaTag color="var(--accent-color)" /> {event.price}
+                    </span>
+                )}
+                {event.prizeMoney && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
+                        <FaTrophy color="var(--accent-color)" /> {event.prizeMoney}
+                    </span>
+                )}
             </div>
         </div>
     </motion.div>
@@ -253,7 +244,7 @@ const EventModal = ({ event, onClose }) => (
                     <img
                         src={event.poster}
                         alt={event.title}
-                        style={{ width: '100%', borderRadius: '8px', marginBottom: '1.5rem' }}
+                        style={{ width: '100%', maxHeight: '450px', objectFit: 'contain', borderRadius: '8px', marginBottom: '1.5rem', backgroundColor: 'var(--bg-primary)', padding: '10px' }}
                     />
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1.2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -277,13 +268,24 @@ const EventModal = ({ event, onClose }) => (
                                 <p style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{event.venue}</p>
                             </div>
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaTag color="var(--accent-color)" />
-                            <div>
-                                <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>REGISTRATION FEE</p>
-                                <p style={{ fontWeight: 'bold', fontSize: '0.9rem', color: 'var(--accent-color)' }}>{event.price}</p>
+                        {event.prizeMoney && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <FaTrophy color="var(--accent-color)" />
+                                <div>
+                                    <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>PRIZE MONEY</p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '0.9rem', color: 'var(--accent-color)' }}>{event.prizeMoney}</p>
+                                </div>
                             </div>
-                        </div>
+                        )}
+                        {event.price && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <FaTag color="var(--accent-color)" />
+                                <div>
+                                    <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>REGISTRATION FEE</p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '0.9rem', color: 'var(--accent-color)' }}>{event.price}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -322,7 +324,7 @@ const EventModal = ({ event, onClose }) => (
                             <div key={idx} style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', height: 'clamp(100px, 15vw, 150px)' }}>
                                 <img
                                     src={item.url}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: 'var(--bg-primary)', padding: '5px' }}
                                     alt={`Gallery ${idx}`}
                                 />
                                 {item.type === 'video' && (

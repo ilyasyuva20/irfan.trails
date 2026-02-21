@@ -21,8 +21,8 @@ const Footer = () => {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         <SocialIcon icon={<FaInstagram />} href="https://instagram.com/irfan.trails" />
-                        <SocialIcon icon={<FaFacebookF />} href="https://facebook.com/irfan.trails" />
-                        <SocialIcon icon={<FaWhatsapp />} href="https://wa.me/yourphonenumber" />
+                        {/* <SocialIcon icon={<FaFacebookF />} href="https://facebook.com/irfan.trails" /> */}
+                        <SocialIcon icon={<FaWhatsapp />} href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" />
                     </div>
                 </div>
 
@@ -44,11 +44,13 @@ const Footer = () => {
                     <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         <li style={{ display: 'flex', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                             <FaMapMarkerAlt style={{ color: 'var(--accent-color)', flexShrink: 0, marginTop: '5px' }} />
-                            <span>Wayanad / Coorg / Bangalore India</span>
+                            <a href="https://www.google.com/maps/place/Trails+Moto/@9.8515958,76.3278296,18.4z/data=!4m6!3m5!1s0x3b087100677142c9:0xfbb82cb78c7d25ed!8m2!3d9.8514092!4d76.3278542!16s%2Fg%2F11x6g58kl1?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                <span>Trails Moto, Kochi, Kerala</span>
+                            </a>
                         </li>
                         <li style={{ display: 'flex', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                             <FaEnvelope style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
-                            <span>irfantrails@gmail.com</span>
+                            <span>irfancn86.io@gmail.com</span>
                         </li>
                     </ul>
                 </div>

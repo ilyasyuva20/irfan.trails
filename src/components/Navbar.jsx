@@ -82,7 +82,7 @@ const Navbar = () => {
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                 <div className="socials desktop-only" style={{ display: 'flex', gap: '1rem' }}>
-                    <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" target="_blank" rel="noopener noreferrer">
                         <FaWhatsapp size={20} />
                     </a>
                     <a href="https://instagram.com/irfan.trails" target="_blank" rel="noopener noreferrer">
@@ -148,7 +148,7 @@ const Navbar = () => {
                         ))}
 
                         <div style={{ display: 'flex', gap: '2rem', marginTop: 'auto', paddingBottom: '2rem' }}>
-                            <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                            <a href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" target="_blank" rel="noopener noreferrer">
                                 <FaWhatsapp size={30} />
                             </a>
                             <a href="https://instagram.com/irfan.trails" target="_blank" rel="noopener noreferrer">
