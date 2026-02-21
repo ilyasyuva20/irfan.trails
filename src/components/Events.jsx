@@ -12,26 +12,35 @@ const eventsData = [
         time: "09:00 AM - 05:00 PM",
         venue: "Wolf Trails Off-Road Track, Kochi",
         registrationUrl: "https://motoXindia.com",
-        poster: "/dist/assets/upcomming1.jpeg",
+        poster: "/assets/upcomming1.jpeg",
         prizeMoney: "1st ₹10000, 2nd ₹5000, 3rd ₹3000",
         description: "Join our expert-led off-road masterclass designed for all skill levels. Master the art of balancing, throttle control, and technical climbs.",
         media: [
-            { type: 'image', url: '/dist/assets/upcomming1.jpeg' },
-            { type: 'image', url: '/dist/assets/upcomming2.jpeg' }
+            { type: 'image', url: '/assets/upcomming1.jpeg' },
+            { type: 'image', url: '/assets/upcomming2.jpeg' }
         ]
     },
     {
         id: 3,
-        title: "Monsoon Mud Rush",
+        title: "Ultimate Enduro Challenge",
         type: "completed",
-        date: "August 20, 2025",
+        date: "June 29, 2025",
         time: "10:00 AM",
-        venue: "Coorg Estate Trails",
-        poster: "https://images.unsplash.com/photo-1609102026400-3c0ca378e470?w=800&q=80",
+        venue: "Dirt Creed Enduro Park, Kalady,Kochi",
+        poster: "/assets/completed1.jpeg",
         description: "Our annual rain-soaked adventure through the coffee plantations of Coorg. A true test of grit and traction.",
         media: [
-            { type: 'image', url: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=800&q=80' },
-            { type: 'image', url: 'https://images.unsplash.com/photo-1517502474097-f9b30659dadb?w=800&q=80' }
+            { type: 'image', url: '/assets/completed1.jpeg' },
+            { type: 'image', url: '/assets/completed2.jpeg' },
+            { type: 'image', url: '/assets/completed3.jpeg' },
+            { type: 'image', url: '/assets/completed4.jpeg' },
+            { type: 'image', url: '/assets/completed5.jpeg' },
+            { type: 'image', url: '/assets/completed6.jpeg' },
+            { type: 'image', url: '/assets/completed7.jpeg' },
+            { type: 'image', url: '/assets/completed8.jpeg' },
+            { type: 'image', url: '/assets/completed9.jpeg' },
+            { type: 'image', url: '/assets/completed10.jpeg' },
+            { type: 'image', url: '/assets/completed11.jpeg' }
         ]
     }
 ];
