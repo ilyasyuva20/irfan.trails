@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaInstagram, FaFacebookF, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaArrowUp, FaPhoneAlt } from 'react-icons/fa';
 
 const FloatingActions = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -53,6 +53,12 @@ const FloatingActions = () => {
                 color="#25D366"
                 href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk"
                 label="WhatsApp"
+            />
+            <SocialButton
+                icon={<FaPhoneAlt />}
+                color="#007BFF"
+                href="tel:+919562584827"
+                label="Call"
             />
 
             <AnimatePresence>

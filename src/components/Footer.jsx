@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaInstagram, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF } from 'react-icons/fa';
-import logo from '../assets/logo.jpeg';
+import { FaInstagram, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaPhoneAlt } from 'react-icons/fa';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -23,6 +23,7 @@ const Footer = () => {
                         <SocialIcon icon={<FaInstagram />} href="https://instagram.com/trails.moto" />
                         {/* <SocialIcon icon={<FaFacebookF />} href="https://facebook.com/irfan.trails" /> */}
                         <SocialIcon icon={<FaWhatsapp />} href="https://wa.me/+919562584827?text=I%20am%20interested%20to%20talk" />
+                        <SocialIcon icon={<FaPhoneAlt />} href="tel:+919562584827" />
                     </div>
                 </div>
 

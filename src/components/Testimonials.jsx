@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
+import sebinImage from '../assets/Sebin_Cyriac.jpeg';
+import malluTravellerImage from '../assets/mallu_traveller.jpeg';
+import hananShaImage from '../assets/hanan_sha.jpeg';
 
 const testimonials = [
     {
         id: 1,
-        name: "Rahul K.",
-        role: "Adventure Rider",
-        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&q=80&fit=crop",
+        name: "Sebin Cyriac",
+        role: "Instagrammer(FishingFreaks)",
+        avatar: sebinImage,
         text: "The training at Irfan Trails completely changed my riding style. The attention to detail and safety is unmatched.",
         rating: 5
     },
     {
         id: 2,
-        name: "Sarah M.",
-        role: "Beginner",
-        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&q=80&fit=crop",
+        name: "Mallu Traveller",
+        role: "Content Creator",
+        avatar: malluTravellerImage,
         text: "I was nervous about off-roading, but Irfan's patience and technique made me confident in just a few sessions!",
         rating: 5
     },
     {
         id: 3,
-        name: "David L.",
-        role: "Tour Participant",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&q=80&fit=crop",
+        name: "Hanan Sha",
+        role: "Playback Singer",
+        avatar: hananShaImage,
         text: "The curated trails and organization were top-notch. Best adventure motorcycling experience I've had.",
-        rating: 4
+        rating: 5
     }
 ];
 

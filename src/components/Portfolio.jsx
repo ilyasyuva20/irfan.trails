@@ -13,13 +13,13 @@ import img8 from '../assets/portfolio/irfantrails8.jpeg';
 // Local images for portfolio
 const portfolioItems = [
     { id: 1, src: img1, category: 'Training' },
-    { id: 2, src: img2, category: 'Events' },
-    { id: 3, src: img3, category: 'Adventure' },
-    { id: 4, src: img4, category: 'Workshop' },
-    { id: 5, src: img5, category: 'Events' },
-    { id: 6, src: img6, category: 'Training' },
-    { id: 7, src: img7, category: 'Adventure' },
-    { id: 8, src: img8, category: 'Workshop' },
+    // { id: 2, src: img2, category: 'Events' },
+    // { id: 3, src: img3, category: 'Adventure' },
+    // { id: 4, src: img4, category: 'Workshop' },
+    // { id: 5, src: img5, category: 'Events' },
+    // { id: 6, src: img6, category: 'Training' },
+    // { id: 7, src: img7, category: 'Adventure' },
+    // { id: 8, src: img8, category: 'Workshop' },
 ];
 
 const Portfolio = () => {

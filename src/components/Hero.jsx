@@ -72,7 +72,7 @@ const Hero = () => {
                         lineHeight: '1.6'
                     }}
                 >
-                    MOTOSPORTS ACADEMY FOR ADVENTURE & OFF-ROAD RIDING <br className="desktop-only" /> FROM GRASS ROOTS LEVEL
+                    Academy for Adventure is a premier hub for off-road enthusiasts, offering professional training from the grass roots level, guided off-road ride expeditions, and high-octane race events, all supported by a specialized motorcycle service center for performance maintenance.
                 </motion.p>
 
                 <motion.div

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaInstagram, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../assets/logo.jpeg';
+import logo from '../assets/logo.png';
 import '../styles/global.css';
 
 const Navbar = () => {

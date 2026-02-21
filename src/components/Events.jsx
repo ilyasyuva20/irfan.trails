@@ -9,8 +9,8 @@ const eventsData = [
         title: "Trails Moto SPEED FEST 2026",
         type: "upcoming",
         date: "March 08, 2026",
-        time: "09:00 AM - 05:00 PM",
         venue: "Wolf Trails Off-Road Track, Kochi",
+        mapUrl: "https://www.google.com/maps?client=safari&hs=Lj39&sca_esv=7a144a3578fe712f&hl=en-us&kgmid=/g/11cr_b180d&shem=rimspc,rimspiosc,shrtsdl&shndl=30&kgs=e96cd0b3e8a87a92&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KUF2JpAVdAg7MblJPOFVWEmK&daddr=W95P%2BCFJ,+Manakkathazam+road,off+nelsonmandela+road,,+Manakunnam,+Kerala+682314",
         registrationUrl: "https://motoXindia.com",
         poster: "/assets/upcomming1.jpeg",
         prizeMoney: "1st ₹10000, 2nd ₹5000, 3rd ₹3000",
@@ -25,7 +25,6 @@ const eventsData = [
         title: "Ultimate Enduro Challenge",
         type: "completed",
         date: "June 29, 2025",
-        time: "10:00 AM",
         venue: "Dirt Creed Enduro Park, Kalady,Kochi",
         poster: "/assets/completed1.jpeg",
         description: "Our annual rain-soaked adventure through the coffee plantations of Coorg. A true test of grit and traction.",
@@ -173,7 +172,14 @@ const EventCard = ({ event, onClick }) => (
                     <FaCalendarAlt color="var(--accent-color)" /> {event.date}
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                    <FaMapMarkerAlt color="var(--accent-color)" /> {event.venue}
+                    <FaMapMarkerAlt color="var(--accent-color)" />
+                    {event.mapUrl ? (
+                        <a href={event.mapUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                            {event.venue}
+                        </a>
+                    ) : (
+                        event.venue
+                    )}
                 </span>
                 {event.price && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
@@ -264,17 +270,18 @@ const EventModal = ({ event, onClose }) => (
                             </div>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaClock color="var(--accent-color)" />
-                            <div>
-                                <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>TIME</p>
-                                <p style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{event.time}</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                             <FaMapMarkerAlt color="var(--accent-color)" />
                             <div>
                                 <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>VENUE</p>
-                                <p style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{event.venue}</p>
+                                <p style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>
+                                    {event.mapUrl ? (
+                                        <a href={event.mapUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                                            {event.venue}
+                                        </a>
+                                    ) : (
+                                        event.venue
+                                    )}
+                                </p>
                             </div>
                         </div>
                         {event.prizeMoney && (
