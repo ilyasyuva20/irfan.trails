@@ -21,6 +21,18 @@ const eventsData = [
         ]
     },
     {
+        id: 2,
+        title: "Leh-Ladakh Expedition",
+        type: "upcoming",
+        date: "Coming Soon",
+        venue: "Coming Soon",
+        poster: "/assets/upcommingnew.jpeg",
+        description: "Conquer the world's highest motorable roads and feel the thrill of the Himalayas.",
+        media: [
+            { type: 'image', url: '/assets/upcommingnew.jpeg' }
+        ]
+    },
+    {
         id: 3,
         title: "Ultimate Enduro Challenge",
         type: "completed",
@@ -311,15 +323,18 @@ const EventModal = ({ event, onClose }) => (
 
                     {event.type === 'upcoming' && (
                         <motion.a
-                            href={event.registrationUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            href={event.registrationUrl || '#'}
+                            target={event.registrationUrl ? "_blank" : "_self"}
+                            rel={event.registrationUrl ? "noopener noreferrer" : ""}
+                            whileHover={event.registrationUrl ? { scale: 1.02 } : {}}
+                            whileTap={event.registrationUrl ? { scale: 0.98 } : {}}
+                            onClick={(e) => {
+                                if (!event.registrationUrl) e.preventDefault();
+                            }}
                             style={{
                                 display: 'inline-block',
-                                background: 'var(--accent-color)',
-                                color: '#000',
+                                background: event.registrationUrl ? 'var(--accent-color)' : 'var(--text-muted)',
+                                color: event.registrationUrl ? '#000' : 'var(--bg-secondary)',
                                 padding: '1rem 2.5rem',
                                 borderRadius: '4px',
                                 fontWeight: 'bold',
@@ -327,7 +342,9 @@ const EventModal = ({ event, onClose }) => (
                                 textTransform: 'uppercase',
                                 letterSpacing: '2px',
                                 marginBottom: '2.5rem',
-                                boxShadow: '0 10px 20px rgba(255,180,0,0.2)'
+                                boxShadow: event.registrationUrl ? '0 10px 20px rgba(255,180,0,0.2)' : 'none',
+                                cursor: event.registrationUrl ? 'pointer' : 'not-allowed',
+                                opacity: event.registrationUrl ? 1 : 0.7
                             }}
                         >
                             Participate Now
