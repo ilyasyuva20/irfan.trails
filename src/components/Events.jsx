@@ -33,6 +33,102 @@ const eventsData = [
         ]
     },
     {
+        id: 5,
+        title: "Training & Trail Ride Munnar",
+        type: "completed",
+        date: "Feb 7 & 8, 2026",
+        venue: "Munnar, Kerala",
+        poster: "/assets/completed-3.jpeg",
+        description: "Expert-led off-road masterclass surrounded by the majestic hills of Munnar, Kerala.",
+        media: [
+            { type: 'image', url: '/assets/completed-3.jpeg' }
+        ]
+    },
+    {
+        id: 4,
+        title: "Training & Trail Ride Wagamon",
+        type: "completed",
+        date: "Jan 17, 18 2026",
+        venue: "Wagamon",
+        poster: "/assets/completed-2.jpeg",
+        description: "Master the art of balancing, throttle control, and technical climbs at the beautiful terrains of Wagamon.",
+        media: [
+            { type: 'image', url: '/assets/completed-2.jpeg' }
+        ]
+    },
+    {
+        id: 11,
+        title: "Training and Track Day",
+        type: "completed",
+        date: "Nov 30, 2025",
+        venue: "Trails Moto Track",
+        poster: "/assets/completed-9.jpeg",
+        description: "Sharpen your skills on the track with our dedicated training and track day.",
+        media: [
+            { type: 'image', url: '/assets/completed-9.jpeg' }
+        ]
+    },
+    {
+        id: 10,
+        title: "Training and Trail Ride Idukki",
+        type: "completed",
+        date: "Oct 25 & 26, 2025",
+        venue: "Idukki, Kerala",
+        poster: "/assets/completed-8.jpeg",
+        description: "Two days of intensive training and trail riding in the scenic off-road terrains of Idukki.",
+        media: [
+            { type: 'image', url: '/assets/completed-8.jpeg' }
+        ]
+    },
+    {
+        id: 9,
+        title: "Enduro Ride Idukki",
+        type: "completed",
+        date: "Oct 11, 12, 2025",
+        venue: "Idukki, Kerala",
+        poster: "/assets/completed-7.jpeg",
+        description: "Exploring the untouched mountain trails of Idukki. A pure and rugged enduro experience.",
+        media: [
+            { type: 'image', url: '/assets/completed-7.jpeg' }
+        ]
+    },
+    {
+        id: 8,
+        title: "Offroad Training Session",
+        type: "completed",
+        date: "Sep 21, 2025",
+        venue: "Kochi, Kerala",
+        poster: "/assets/completed-6.jpeg",
+        description: "Intense offroad training session in Kochi. Learn from the best offroad riding experts.",
+        media: [
+            { type: 'image', url: '/assets/completed-6.jpeg' }
+        ]
+    },
+    {
+        id: 6,
+        title: "Quad Cross Time Trial",
+        type: "completed",
+        date: "Sep 14, 2025",
+        venue: "Trails Moto Track",
+        poster: "/assets/completed-4.jpeg",
+        description: "First time in India! Get ready for the time trial again with our exclusive Quad Bike Trail.",
+        media: [
+            { type: 'image', url: '/assets/completed-4.jpeg' }
+        ]
+    },
+    {
+        id: 7,
+        title: "Monsoon Expedition",
+        type: "completed",
+        date: "Aug 1, 2, 3, 2025",
+        venue: "Idukki, Kerala",
+        poster: "/assets/completed-5.jpeg",
+        description: "Come and learn how to use your ADV as intended. Spend three days in the great outdoors, learn a lot, and have unlimited fun in Idukki.",
+        media: [
+            { type: 'image', url: '/assets/completed-5.jpeg' }
+        ]
+    },
+    {
         id: 3,
         title: "Ultimate Enduro Challenge",
         type: "completed",
@@ -171,7 +267,7 @@ const EventCard = ({ event, onClick }) => (
                 fontSize: '0.75rem',
                 fontWeight: 'bold',
                 textTransform: 'uppercase',
-                background: event.type === 'upcoming' ? 'var(--accent-color)' : 'var(--text-muted)',
+                background: event.type === 'upcoming' ? 'var(--accent-color)' : '#25D366',
                 color: event.type === 'upcoming' ? '#000' : '#fff'
             }}>
                 {event.type}
