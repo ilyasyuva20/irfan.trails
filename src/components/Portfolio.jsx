@@ -118,15 +118,6 @@ const Portfolio = () => {
                                         color: '#fff',
                                         pointerEvents: 'none'
                                     }}>
-                                        <span style={{
-                                            fontSize: '0.8rem',
-                                            textTransform: 'uppercase',
-                                            letterSpacing: '2px',
-                                            color: 'var(--accent-color)',
-                                            fontWeight: 'bold'
-                                        }}>
-                                            {item.category}
-                                        </span>
                                     </div>
                                     <div style={{
                                         position: 'absolute',
@@ -236,31 +227,6 @@ const Portfolio = () => {
                                 boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
                             }}
                         />
-
-                        {/* Image Category Label */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 20 }}
-                            transition={{ delay: 0.3 }}
-                            style={{
-                                position: 'absolute',
-                                bottom: '3rem',
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                                background: 'rgba(0,0,0,0.6)',
-                                padding: '0.8rem 2rem',
-                                borderRadius: '30px',
-                                border: '1px solid rgba(255,255,255,0.1)',
-                                color: 'var(--accent-color)',
-                                fontWeight: 'bold',
-                                textTransform: 'uppercase',
-                                letterSpacing: '2px',
-                                fontSize: '0.9rem'
-                            }}
-                        >
-                            {selectedImage.category}
-                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
