@@ -28,11 +28,11 @@ const About = () => {
                     <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
                         Born from a passion for the unpaved path, we bridge the gap between motorcycle enthusiasts and the wild.
                         Whether you are a beginner looking to find your footing or a seasoned rider seeking the next challenge,
-                        we provide the platform, the training, and the adventure.With all supported by <a href="https://instagram.com/bmcairfiltersindia" target="_blank" rel="noopener noreferrer"><span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>BMC Air Filters India</span></a>.
+                        we provide the platform, the training, and the adventure.With all supported by <a href="https://www.instagram.com/bmcairfilterindia?igsh=ZGFsNXhoa2hna2p6" target="_blank" rel="noopener noreferrer"><span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>BMC Air Filters India</span></a>.
                     </p>
-                    <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+                    {/* <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
                         Founder: <a href="https://instagram.com/irfan.trails" target="_blank" rel="noopener noreferrer"><span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>irfan trails</span></a>
-                    </p>
+                    </p> */}
                 </motion.div>
             </div>
         </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import bgImage from '../assets/portfolio/irfantrails4.jpeg';
+import bgImage from '../assets/Banner1.jpeg';
 
 const Hero = () => {
     const { scrollY } = useScroll();
@@ -22,17 +22,16 @@ const Hero = () => {
         }}>
             {/* Background Parallax */}
             <motion.div
+                className="hero-background"
                 style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '120%', // Taller for parallax
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(${bgImage})`, // High-end local motorcycle image
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundImage: `linear-gradient(rgba(0, 5, 20, 0.6), rgba(0, 5, 20, 0.7)), url(${bgImage})`,
                     y: y1,
-                    zIndex: -1,
+                    zIndex: 0,
                 }}
             />
 
@@ -44,7 +43,8 @@ const Hero = () => {
                 style={{
                     zIndex: 1,
                     padding: '2rem',
-                    marginTop: '2rem'
+                    marginTop: '2rem',
+                    position: 'relative'
                 }}
             >
                 <motion.h1
@@ -52,7 +52,7 @@ const Hero = () => {
                         fontSize: 'clamp(2.5rem, 10vw, 6rem)',
                         marginBottom: '1.5rem',
                         lineHeight: 1.1,
-                        textShadow: '0 0 20px rgba(0,0,0,0.5)'
+                        textShadow: '0 0 20px rgba(0,0,0,0.8)'
                     }}
                 >
                     MOTOSPORTS <br />
@@ -69,7 +69,8 @@ const Hero = () => {
                         margin: '0 auto',
                         color: 'var(--text-secondary)',
                         letterSpacing: '1px',
-                        lineHeight: '1.6'
+                        lineHeight: '1.6',
+                        textShadow: '0 2px 4px rgba(0,0,0,0.8)',
                     }}
                 >
                     Academy for Adventure is a premier hub for off-road enthusiasts, offering professional training from the grass roots level, guided off-road ride expeditions, and high-octane race events, all supported by a specialized motorcycle service center for performance maintenance.
@@ -107,8 +108,16 @@ const Hero = () => {
             </motion.div>
 
             <style>{`
+                .hero-background {
+                    background-size: cover;
+                    background-position: 0px;
+                }
+                
                 @media (max-width: 768px) {
                     .desktop-only { display: none; }
+                    .hero-background {
+                        background-position: center top;
+                    }
                 }
             `}</style>
         </section>
