@@ -7,7 +7,7 @@ const eventsData = [
     {
         id: 1,
         title: "Trails Moto SPEED FEST 2026",
-        type: "upcoming",
+        type: "completed",
         date: "March 08, 2026",
         venue: "Wolf Trails Off-Road Track, Kochi",
         mapUrl: "https://www.google.com/maps?client=safari&hs=Lj39&sca_esv=7a144a3578fe712f&hl=en-us&kgmid=/g/11cr_b180d&shem=rimspc,rimspiosc,shrtsdl&shndl=30&kgs=e96cd0b3e8a87a92&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KUF2JpAVdAg7MblJPOFVWEmK&daddr=W95P%2BCFJ,+Manakkathazam+road,off+nelsonmandela+road,,+Manakunnam,+Kerala+682314",
