@@ -16,20 +16,45 @@ const eventsData = [
         prizeMoney: "1st ₹10000, 2nd ₹5000, 3rd ₹3000",
         description: "Join our expert-led off-road masterclass designed for all skill levels. Master the art of balancing, throttle control, and technical climbs.",
         media: [
-            { type: 'image', url: '/assets/upcomming1.jpeg' },
-            { type: 'image', url: '/assets/upcomming2.jpeg' }
+            { type: 'image', url: '/assets/completedNew1.jpeg' },
+            { type: 'image', url: '/assets/completedNew2.jpeg' },
+            { type: 'image', url: '/assets/completedNew3.jpeg' },
+            { type: 'image', url: '/assets/completedNew4.jpeg' },
+            { type: 'image', url: '/assets/completedNew5.jpeg' },
+            { type: 'image', url: '/assets/completedNew6.jpeg' },
+            { type: 'image', url: '/assets/completedNew7.jpeg' },
+            { type: 'image', url: '/assets/completedNew8.jpeg' },
+            { type: 'image', url: '/assets/completedNew9.jpeg' },
+            { type: 'image', url: '/assets/completedNew10.jpeg' },
+            { type: 'image', url: '/assets/completedNew11.jpeg' },
+            { type: 'image', url: '/assets/completedNew12.jpeg' },
+            { type: 'image', url: '/assets/completedNew13.jpeg' },
+            { type: 'image', url: '/assets/completedNew14.jpeg' },
+            { type: 'image', url: '/assets/completedNew15.jpeg' },
+            { type: 'image', url: '/assets/completedNew16.jpeg' },
+            { type: 'image', url: '/assets/completedNew17.jpeg' },
+            { type: 'image', url: '/assets/completedNew18.jpeg' },
+            { type: 'image', url: '/assets/completedNew19.jpeg' },
+            { type: 'image', url: '/assets/completedNew20.jpeg' },
+            { type: 'image', url: '/assets/completedNew21.jpeg' },
+            { type: 'image', url: '/assets/completedNew22.jpeg' },
+            { type: 'image', url: '/assets/completedNew23.jpeg' },
+            { type: 'image', url: '/assets/completedNew24.jpeg' },
+            { type: 'image', url: '/assets/completedNew25.jpeg' },
+            { type: 'image', url: '/assets/completedNew26.jpeg' },
+            { type: 'image', url: '/assets/completedNew27.jpeg' }
         ]
     },
     {
         id: 2,
-        title: "Leh-Ladakh Expedition",
+        title: "Spiti Expedition",
         type: "upcoming",
-        date: "Coming Soon",
-        venue: "Coming Soon",
-        poster: "/assets/upcommingnew.jpeg",
+        date: "April 20th - 27th, 2026",
+        venue: "Spiti Valley",
+        poster: "/assets/upcomming-ladak.jpeg",
         description: "Conquer the world's highest motorable roads and feel the thrill of the Himalayas.",
         media: [
-            { type: 'image', url: '/assets/upcommingnew.jpeg' }
+            { type: 'image', url: '/assets/upcomming-ladak.jpeg' }
         ]
     },
     {
