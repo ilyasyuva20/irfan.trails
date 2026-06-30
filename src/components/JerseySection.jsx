@@ -699,10 +699,10 @@ Please confirm my order and share payment details!`;
                 }
                 @media (max-width: 768px) {
                     .jersey-preview-col {
-                        order: 2;
+                        order: 1;
                     }
                     .jersey-form-col {
-                        order: 1;
+                        order: 2;
                     }
                 }
             `}</style>
