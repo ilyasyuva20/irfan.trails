@@ -8,7 +8,7 @@ const JerseySection = () => {
     const [view, setView] = useState('back'); // default to 'back' since name and number go on back
     const [name, setName] = useState('Trails');
     const [number, setNumber] = useState('55');
-    const [textColor, setTextColor] = useState('#FFFFFF'); // White by default, can also choose '#FFB400' or '#000000'
+    const textColor = '#FFFFFF';
     const [size, setSize] = useState('M');
     const [quantity, setQuantity] = useState(1);
     const [showSizeChart, setShowSizeChart] = useState(false);
@@ -30,7 +30,7 @@ const JerseySection = () => {
 • Number: ${formattedNumber}
 • Size: ${size}
 • Quantity: ${quantity}
-• Text Color: ${textColor === '#FFFFFF' ? 'White' : textColor === '#FFB400' ? 'Yellow' : 'Black'}
+• Text Color: White
 • Total Amount: ₹${price * quantity}
 
 Please confirm my order and share payment details!`;
@@ -97,7 +97,7 @@ Please confirm my order and share payment details!`;
                 <div className="responsive-grid" style={{ gridTemplateColumns: '1.1fr 0.9fr', gap: '3.5rem', alignItems: 'start' }}>
 
                     {/* LEFT COLUMN: INTERACTIVE PREVIEW */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    <div className="jersey-preview-col" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
                         {/* Live Preview Card */}
                         <div style={{
@@ -335,7 +335,7 @@ Please confirm my order and share payment details!`;
                     </div>
 
                     {/* RIGHT COLUMN: CONFIGURATION FORM */}
-                    <div style={{
+                    <div className="jersey-form-col" style={{
                         background: 'var(--bg-tertiary)',
                         borderRadius: '12px',
                         padding: '2.5rem 2rem',
@@ -433,51 +433,6 @@ Please confirm my order and share payment details!`;
                                         transition: 'border-color 0.3s ease'
                                     }}
                                 />
-                            </div>
-
-                            {/* Font Color Selector */}
-                            <div>
-                                <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                                    Print Color
-                                </label>
-                                <div style={{ display: 'flex', gap: '1rem' }}>
-                                    {[
-                                        { name: 'White', hex: '#FFFFFF' },
-                                        { name: 'Yellow', hex: '#FFB400' },
-                                        { name: 'Black', hex: '#000000' }
-                                    ].map((colorOpt) => (
-                                        <button
-                                            key={colorOpt.hex}
-                                            onClick={() => {
-                                                setTextColor(colorOpt.hex);
-                                                if (view !== 'back') setView('back');
-                                            }}
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '8px',
-                                                padding: '0.5rem 1rem',
-                                                background: textColor === colorOpt.hex ? 'rgba(255,180,0,0.1)' : 'transparent',
-                                                border: `1px solid ${textColor === colorOpt.hex ? 'var(--accent-color)' : 'rgba(255,255,255,0.1)'}`,
-                                                borderRadius: '6px',
-                                                color: '#fff',
-                                                cursor: 'pointer',
-                                                fontSize: '0.85rem',
-                                                transition: 'all 0.3s ease'
-                                            }}
-                                        >
-                                            <span style={{
-                                                width: '12px',
-                                                height: '12px',
-                                                borderRadius: '50%',
-                                                background: colorOpt.hex,
-                                                border: '1px solid rgba(255,255,255,0.2)',
-                                                display: 'inline-block'
-                                            }}></span>
-                                            {colorOpt.name}
-                                        </button>
-                                    ))}
-                                </div>
                             </div>
 
                             {/* Size Selection */}
@@ -741,6 +696,14 @@ Please confirm my order and share payment details!`;
                 }
                 .spin {
                     animation: spin 1s linear infinite;
+                }
+                @media (max-width: 768px) {
+                    .jersey-preview-col {
+                        order: 2;
+                    }
+                    .jersey-form-col {
+                        order: 1;
+                    }
                 }
             `}</style>
         </section>
