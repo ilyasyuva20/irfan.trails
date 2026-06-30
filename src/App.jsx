@@ -3,6 +3,7 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import JerseySection from './components/JerseySection';
 import Services from './components/Services';
 import Events from './components/Events';
 import Portfolio from './components/Portfolio';
@@ -41,6 +42,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <JerseySection />
       <Services />
       <Events />
       <Portfolio />
