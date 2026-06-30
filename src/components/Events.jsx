@@ -5,6 +5,18 @@ import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTimes, FaPlayCircle, FaTag, F
 // Mock data for events
 const eventsData = [
     {
+        id: 2,
+        title: "Spiti Expedition",
+        type: "completed",
+        date: "April 20th - 27th, 2026",
+        venue: "Spiti Valley",
+        poster: "/assets/upcomming-ladak.jpeg",
+        description: "Conquer the world's highest motorable roads and feel the thrill of the Himalayas.",
+        media: [
+            { type: 'image', url: '/assets/upcomming-ladak.jpeg' }
+        ]
+    },
+    {
         id: 1,
         title: "Trails Moto SPEED FEST 2026",
         type: "completed",
@@ -43,18 +55,6 @@ const eventsData = [
             { type: 'image', url: '/assets/completedNew25.jpeg' },
             { type: 'image', url: '/assets/completedNew26.jpeg' },
             { type: 'image', url: '/assets/completedNew27.jpeg' }
-        ]
-    },
-    {
-        id: 2,
-        title: "Spiti Expedition",
-        type: "upcoming",
-        date: "April 20th - 27th, 2026",
-        venue: "Spiti Valley",
-        poster: "/assets/upcomming-ladak.jpeg",
-        description: "Conquer the world's highest motorable roads and feel the thrill of the Himalayas.",
-        media: [
-            { type: 'image', url: '/assets/upcomming-ladak.jpeg' }
         ]
     },
     {

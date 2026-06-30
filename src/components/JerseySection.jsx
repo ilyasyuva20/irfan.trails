@@ -6,7 +6,7 @@ import jerseyBack from '../assets/JerseyBack.jpg';
 
 const JerseySection = () => {
     const [view, setView] = useState('back'); // default to 'back' since name and number go on back
-    const [name, setName] = useState('Trails');
+    const [name, setName] = useState('TRAILS');
     const [number, setNumber] = useState('55');
     const textColor = '#FFFFFF';
     const [size, setSize] = useState('M');
@@ -175,7 +175,7 @@ Please confirm my order and share payment details!`;
                                             top: '19.5%',
                                             left: '50%',
                                             transform: 'translateX(-50%)',
-                                            fontSize: '5.5cqw',
+                                            fontSize: name.trim().length >= 12 ? '3.2cqw' : name.trim().length >= 10 ? '3.8cqw' : '5.5cqw',
                                             fontWeight: '700',
                                             fontStyle: 'italic',
                                             fontFamily: 'var(--font-family-body)', // Montserrat matches original jersey style
