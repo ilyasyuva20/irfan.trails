@@ -80,7 +80,7 @@ Please confirm my order and share payment details!`;
                         transition={{ delay: 0.1 }}
                         style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
                     >
-                        CUSTOM <span style={{ color: 'var(--accent-color)' }}>RACING</span> JERSEY
+                        CUSTOM <span style={{ color: 'var(--accent-color)' }}>OFFROAD</span> JERSEY
                     </motion.h2>
                     <div style={{ width: '80px', height: '4px', background: 'var(--accent-color)', margin: '1.5rem auto' }}></div>
                     <motion.p
