@@ -5,6 +5,18 @@ import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTimes, FaPlayCircle, FaTag, F
 // Mock data for events
 const eventsData = [
     {
+        id: 12,
+        title: "Trails Moto Offroad Expedition",
+        type: "completed",
+        date: "November 07 & 08, 2026",
+        venue: "Vagamon, Kerala",
+        poster: "/assets/completed-offroad-expedition-vagamon.jpeg",
+        description: "Vagamon - where the monsoon fuels the adventure. A two-day off-road expedition through the forest trails of Vagamon.",
+        media: [
+            { type: 'image', url: '/assets/completed-offroad-expedition-vagamon.jpeg' }
+        ]
+    },
+    {
         id: 2,
         title: "Spiti Expedition",
         type: "completed",
