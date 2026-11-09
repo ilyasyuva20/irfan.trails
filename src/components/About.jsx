@@ -31,8 +31,7 @@ const About = () => {
                         {/* we provide the platform, the training, and the adventure.With all supported by <a href="https://www.instagram.com/bmcairfilterindia?igsh=ZGFsNXhoa2hna2p6" target="_blank" rel="noopener noreferrer"><span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>BMC Air Filters India</span></a>. */}
                     </p>
                     <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                        Founder: Irfan Trails<br />
-                        Co-founder: Indian SR Biker
+                        Founder: Irfan Trails
                     </p>
                 </motion.div>
             </div>
