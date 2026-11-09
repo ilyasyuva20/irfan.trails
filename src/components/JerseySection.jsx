@@ -4,8 +4,43 @@ import { FaWhatsapp, FaRulerCombined, FaCheckCircle, FaSpinner } from 'react-ico
 import jerseyFront from '../assets/JerseyFront.jpg';
 import jerseyBack from '../assets/JerseyBack.jpg';
 
+const ORDERS_SHEET_URL = import.meta.env.VITE_JERSEY_ORDERS_URL;
+
+const labelStyle = { display: 'block', fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' };
+const errorStyle = { display: 'block', fontSize: '0.8rem', color: '#f87171', marginTop: '0.4rem' };
+const getCustomerInputStyle = (hasError) => ({
+    width: '100%',
+    padding: '0.8rem 1rem',
+    background: 'var(--bg-primary)',
+    border: `1px solid ${hasError ? '#f87171' : 'rgba(255,255,255,0.1)'}`,
+    borderRadius: '6px',
+    color: '#fff',
+    fontSize: '1rem',
+    outline: 'none',
+    transition: 'border-color 0.3s ease'
+});
+
+// Apps Script does not send CORS headers, so the response is unreadable (no-cors).
+// keepalive lets the request finish after the customer switches to WhatsApp.
+const saveOrderToSheet = (order) => {
+    if (!ORDERS_SHEET_URL) {
+        console.warn('VITE_JERSEY_ORDERS_URL is not set; order was not saved to the sheet.');
+        return;
+    }
+    fetch(ORDERS_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(order),
+    }).catch((error) => console.error('Could not save order to sheet:', error));
+};
+
 const JerseySection = () => {
     const [view, setView] = useState('back'); // default to 'back' since name and number go on back
+    const [customerName, setCustomerName] = useState('');
+    const [customerPhone, setCustomerPhone] = useState('');
+    const [errors, setErrors] = useState({});
     const [name, setName] = useState('TRAILS');
     const [number, setNumber] = useState('55');
     const textColor = '#FFFFFF';
@@ -18,20 +53,42 @@ const JerseySection = () => {
     const originalPrice = 1599;
 
     const handleWhatsAppOrder = () => {
+        const trimmedCustomerName = customerName.trim();
+        const nextErrors = {};
+        if (!trimmedCustomerName) nextErrors.customerName = 'Please enter your name';
+        if (!/^[6-9]\d{9}$/.test(customerPhone)) nextErrors.customerPhone = 'Please enter a valid 10-digit mobile number';
+        setErrors(nextErrors);
+        if (Object.keys(nextErrors).length > 0) return;
+
+        const formattedName = name.trim().toUpperCase() || 'NOT SPECIFIED';
+        const formattedNumber = number.trim() || 'NONE';
+        const total = price * quantity;
+
+        saveOrderToSheet({
+            customerName: trimmedCustomerName,
+            customerPhone,
+            jerseyName: formattedName,
+            jerseyNumber: formattedNumber,
+            size,
+            quantity,
+            total,
+        });
+
         setIsSubmitting(true);
         setTimeout(() => {
-            const formattedName = name.trim().toUpperCase() || 'NOT SPECIFIED';
-            const formattedNumber = number.trim() || 'NONE';
-
             const message = `Hi Trails Moto! I would like to order a Custom Racing Jersey.
 
+*CUSTOMER DETAILS*
+• Name: ${trimmedCustomerName}
+• Phone: ${customerPhone}
+
 *ORDER DETAILS*
-• Name: ${formattedName}
+• Jersey Name: ${formattedName}
 • Number: ${formattedNumber}
 • Size: ${size}
 • Quantity: ${quantity}
 • Text Color: White
-• Total Amount: ₹${price * quantity}
+• Total Amount: ₹${total}
 
 Please confirm my order and share payment details!`;
 
@@ -372,6 +429,51 @@ Please confirm my order and share payment details!`;
 
                         {/* Customize Fields */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+
+                            {/* Customer Name */}
+                            <div>
+                                <label htmlFor="jersey-customer-name" style={labelStyle}>
+                                    Your Name
+                                </label>
+                                <input
+                                    id="jersey-customer-name"
+                                    type="text"
+                                    autoComplete="name"
+                                    maxLength={60}
+                                    value={customerName}
+                                    onChange={(e) => {
+                                        setCustomerName(e.target.value);
+                                        if (errors.customerName) setErrors({ ...errors, customerName: undefined });
+                                    }}
+                                    placeholder="Your full name"
+                                    aria-invalid={Boolean(errors.customerName)}
+                                    style={getCustomerInputStyle(errors.customerName)}
+                                />
+                                {errors.customerName && <span role="alert" style={errorStyle}>{errors.customerName}</span>}
+                            </div>
+
+                            {/* Customer Phone */}
+                            <div>
+                                <label htmlFor="jersey-customer-phone" style={labelStyle}>
+                                    WhatsApp Number
+                                </label>
+                                <input
+                                    id="jersey-customer-phone"
+                                    type="tel"
+                                    inputMode="numeric"
+                                    autoComplete="tel-national"
+                                    value={customerPhone}
+                                    onChange={(e) => {
+                                        // Pasted or autofilled numbers can include +91 or a leading 0.
+                                        setCustomerPhone(e.target.value.replace(/\D/g, '').replace(/^(?:91|0)(?=\d{10})/, '').slice(0, 10));
+                                        if (errors.customerPhone) setErrors({ ...errors, customerPhone: undefined });
+                                    }}
+                                    placeholder="10-digit mobile number"
+                                    aria-invalid={Boolean(errors.customerPhone)}
+                                    style={getCustomerInputStyle(errors.customerPhone)}
+                                />
+                                {errors.customerPhone && <span role="alert" style={errorStyle}>{errors.customerPhone}</span>}
+                            </div>
 
                             {/* Name Input */}
                             <div>
